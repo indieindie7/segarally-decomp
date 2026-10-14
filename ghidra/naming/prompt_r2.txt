@@ -1,0 +1,13 @@
+Second review of provisional function names in a Sega Saturn SH-2 game decompile (Sega Rally Championship Plus, Saturn US). Research only.
+These names were marked provisional by a first naming pass, or have a doubtful prefix. Now each entry also has its callers.
+Entry layout: "#### PROG 0x<addr> <name> | <comment>", then the function decompile, then "---- callers: N (names)", then up to 3 caller decompiles.
+Literal-pool pointers are resolved: &name or &DAT_<addr> is the address the code uses; PTR_<name>_<addr> is a pointer to a named function.
+Context: one program 0RALLY.DAT at 0x06009000, compiled with Hitachi SHC. Libraries linked: SBL (GFS 2.12, SYS 2.20, BUP 1.21), Sega's own CDC/GFS, SMPC, VDP1/VDP2, SCU DMA, SCSP sound. THIS GAME DOES NOT USE SGL: every name starting sgl_ is wrong and must be RENAMED to what the code really does (vdp1_, vdp2_, math_, scu_, obj_, car_, ... or an SBL module name like gfs_, cdc_, bup_, spr_, scl_ when the behaviour matches SBL). Use one sound prefix: snd_ (rename sound_ to snd_). Game modules: car physics, race/lap/rank, courses (desert, forest, mountain, lakeside), menus, replay, two-player split screen, camera, ghost/time attack.
+Name from what the code does; never copy text from any leaked source.
+For each entry decide, using the body AND how callers use it (arguments passed, result used, the caller's own name and job):
+- CONFIRM: the name fits.
+- RENAME: a clearly better name (prefix + underscore + CamelCase, letters digits underscore, no _<number> suffix unless two different functions truly do the same job).
+- UNSURE: still not enough evidence. Keep it.
+Write each verdict line to the result file as soon as you decide it (append as you go), in input order, exactly:
+<PROG> 0x<addr> <oldname> CONFIRM|RENAME|UNSURE <newname or oldname> <short reason, one line>
+Every entry gets exactly one line. Edit no other file. At the end reply only with the counts.

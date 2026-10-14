@@ -1,0 +1,8 @@
+# label image base funcinfo hand   (paths relative to this file)
+powerdrift PowerDrift/saturn/sat00000.bin 06004000 PowerDrift/ghidra/funcinfo_sat.tsv PowerDrift/ghidra/hand_sat.txt
+manxtt ManxTT/cd/0.AAA 06010000 ManxTT/ghidra/funcinfo_0.tsv ManxTT/ghidra/hand_0.txt
+sonicr SonicR/cd/0.BIN 06004000 SonicR/ghidra/funcinfo_0.tsv SonicR/ghidra/hand_0.txt
+scorcher Scorcher/saturn/cd/LORT.BIN 06004000 Scorcher/ghidra/funcinfo_LORT.tsv Scorcher/ghidra/hand_LORT.txt
+cyberspeedway_AUTOEXEC CyberSpeedway/cd/AUTOEXEC.BIN 06012000 CyberSpeedway/ghidra/funcinfo_AUTOEXEC.tsv CyberSpeedway/ghidra/hand_AUTOEXEC.txt
+cyberspeedway_MENU CyberSpeedway/cd/MENU.BIN 06012000 CyberSpeedway/ghidra/funcinfo_MENU.tsv CyberSpeedway/ghidra/hand_MENU.txt
+cyberspeedway_MAP1_1 CyberSpeedway/cd/MAP1_1.BIN 06012000 CyberSpeedway/ghidra/funcinfo_MAP1_1.tsv CyberSpeedway/ghidra/hand_MAP1_1.txt
