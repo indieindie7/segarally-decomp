@@ -8,7 +8,7 @@ Same method as [powerdrift-decomp](https://github.com/indieindie7/powerdrift-dec
 Non-commercial, done for study and preservation. No game data, binaries or decompiled C are in this repository,
 and this is not a matching or rebuildable decompilation.
 
-All 1729 functions have a name (1715 hand-file lines; the other 14 are switch-case labels Ghidra split off as functions), 0 `FUN_` left.
+All 1729 functions have a name (1715 hand-file lines; the rest are switch-case labels Ghidra split off as functions), 0 `FUN_` left.
 Three names stay provisional: they are data fragments that Ghidra decoded as code (`stub_06024bef`, `stub_06029255`,
 `stub_0602db1a`).
 
