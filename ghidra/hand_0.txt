@@ -1385,13 +1385,13 @@
 0x0603fa8c func bup_CheckSaveMedia hand probes internal and cartridge backup RAM, formats RALLYPLUS/SEGARALLY files, returns bit mask of usable devices or -1
 0x0603fbf2 func bup_EnsureFile0 hand tries up to 3 times to create RALLYPLUS_0 or SEGARALLY_0 save file then verifies, returns 0 on success
 0x0603fcbe func bup_EnsureFile1 hand tries up to 3 times to create RALLYPLUS_1 or SEGARALLY_1 save file then verifies, returns 0 on success
-0x060414e4 func math_DivideSigned32 hand libmatch body cyberspeedway_AUTOEXEC:060172f8 | unrolled non-restoring 32-bit signed division on r0 and r1 (library divide helper)
+0x060414e4 func __divsi3 hand libmatch body cyberspeedway_AUTOEXEC:060172f8 | unrolled non-restoring 32-bit signed division on r0 and r1 (library divide helper) (bsim audit 10-14: was math_DivideSigned32)
 0x06041598 func libgcc_SDiv32 hand libmatch body cyberspeedway_AUTOEXEC:06017590 | signed 32-bit divide using div1 step chain, r0 divisor r1 dividend, zero-divisor stores a handler value
 0x06041660 func memmove hand libmatch call cyberspeedway_MENU:0601c9f0 | overlap-safe byte copy, forward or backward depending on pointer order (twin AUTOEXEC:06018eb8)
 0x060416a4 func strcpy_Wrap hand rules: small wrapper around strcpy
 0x060416b8 func strncpy hand copies up to n chars from source and zero pads remainder
 0x060416ec func math_DivideSigned32Hw hand libmatch call cyberspeedway_MAP1_1:0603d378 | unrolled non-restoring 32-bit signed division on r0 and r1 (library divide helper) (twin AUTOEXEC:060172f8) (was math_DivideSigned32_2)
-0x06041728 func math_DivideUnsigned32 hand libmatch body cyberspeedway_AUTOEXEC:060174e8 | unrolled non-restoring 32-bit unsigned division helper
+0x06041728 func __udivsi3 hand libmatch body cyberspeedway_AUTOEXEC:060174e8 | unrolled non-restoring 32-bit unsigned division helper (bsim audit 10-14: was math_DivideUnsigned32)
 0x060417d0 func memcpy_WordsJump hand libmatch call cyberspeedway_MENU:0601ac30 | copies r0 bytes via jump table for 64 or fewer, else unrolled long word copy loop
 0x060417dc func mem_CopyTailJumpByLength hand libmatch call cyberspeedway_MENU:0601ac30 | copies r0 bytes via jump table for 64 or fewer, else unrolled long word copy loop (was memcpy_WordsJump_2)
 0x06041874 func strcpy hand libmatch body cyberspeedway_AUTOEXEC:06018fd4 | copies string; aligned pointers go to word copy routine else byte-by-byte unrolled
@@ -1414,7 +1414,7 @@
 0x06042bfe func buf_SetCellChar hand writes character byte of current cell in row*stride text buffer
 0x06042c18 func buf_SetCellAttr hand writes attribute byte following the character of current cell
 0x06042c34 func buf_ScrollRowStepTwice hand builds scroll context from globals and runs row scroll step once or twice
-0x06042c7a func buf_ScrollRowStep hand ; copies cell rows within text buffer, filling vacated rows with blank, advances source and dest
+0x06042c7a func text_ScrollRegion hand ; copies cell rows within text buffer, filling vacated rows with blank, advances source and dest (bsim audit 10-14: was buf_ScrollRowStep)
 0x06042eac func cdc_GetStatusUnpacked hand sends CDC command 0 get status via cdc_StoreResponse then cdc_UnpackStatus into output
 0x06042ee6 func cd_GetStatusSavedSr hand libmatch call cyberspeedway_MENU:060c7d8c | calls one function and returns 0 (twin AUTOEXEC:0605a248) (was cd_StubCallReturn0)
 0x06042eec func cd_GetStatusChecked hand reads stable CD status with cd_ReadStatusStable, unpacks, returns -8 if error status or no disc bit
